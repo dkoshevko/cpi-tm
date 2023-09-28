@@ -1,0 +1,22 @@
+@import '../utilities/mixins';
+@import '../utilities/placeholders';
+@import '../utilities/variables';
+
+.single-item {
+    cursor: pointer;
+    background-color: #4782ec;
+    width: 150px;
+    padding: 4px 8px;
+    border-radius: $radius-small;
+    box-shadow: -1px 0 0.5px #00000083 inset, 1px 0 0.5px #ffffff43 inset;
+    font-size: 12px;
+    gap: 2px;
+    @include flex(row, flex-start, center);
+}
+.single-item:hover {
+    background-color: #5f8ee5;
+}
+.single-item:active {
+    background-color: #083ea1;
+    box-shadow: 1px 0 0.5px #00000083 inset, -1px 0 0.5px #00000083 inset;
+}

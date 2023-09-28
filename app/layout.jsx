@@ -1,7 +1,13 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import Taskbar from './components/Taskbar'
+import './globals.scss'
 
-const inter = Inter({ subsets: ['latin'] })
+import localFont from 'next/font/local'
+ 
+// Font files can be colocated inside of `app`
+const myFont = localFont({
+  src: './fonts/pixeloid-font/PixeloidSans-mLxMm.ttf',
+  display: 'swap',
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -10,8 +16,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="uk" className={myFont.className}>
+      {/* <body className={inter.className}>{children}</body> */}
+      <body>
+        {children}
+        <Taskbar />
+      </body>
     </html>
   )
 }
