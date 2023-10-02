@@ -1,0 +1,22 @@
+@import '../utilities/mixins';
+@import '../utilities/placeholders';
+@import '../utilities/variables';
+
+.desktop--icons__single {
+    cursor: pointer;
+    padding: 10px;
+    min-width: 110px;
+    max-width: 150px;
+    border: 1px solid transparent;
+    @include flex(column, flex-end, center);
+
+    span {
+        padding: 2px 4px;
+        margin-top: 4px;
+    }
+}
+
+.selected {
+    background-color: #99D1FF99;
+    border-color: #99D1FF;
+}

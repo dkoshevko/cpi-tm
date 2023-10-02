@@ -9,8 +9,12 @@ export default function Clock() {
         // Fonction pour mettre à jour l'heure actuelle
         const updateClock = () => {
             const date = new Date();
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            
+            // Utiliser String.padStart() pour ajouter un zéro si nécessaire
             const formattedTime =
-                `${date.getHours()}:${date.getMinutes()}`;
+                `${hours}:${minutes.toString().padStart(2, '0')}`;
             setShowTime(formattedTime);
         };
 
@@ -22,7 +26,6 @@ export default function Clock() {
             clearInterval(intervalId);
         };
     }, []);
-
     return (
         <span>{showTime}</span>
     );

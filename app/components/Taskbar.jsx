@@ -7,7 +7,7 @@ import Clock from './Clock';
 
 export default function Taskbar() {
     return (
-        <footer className="taskbar">
+        <div className="taskbar">
             <div className="taskbar--start">
             <Image 
                 src={'/cpi.png'}
@@ -15,7 +15,7 @@ export default function Taskbar() {
                 width={20}
                 height={20}
                 />
-                <span>start</span>
+                <span>menu</span>
             </div>
             <div className="taskbar--items">
                 <TaskbarItem />
@@ -24,6 +24,6 @@ export default function Taskbar() {
             <div className="taskbar--time">
                 <Clock />
             </div>
-        </footer>
+        </div>
     )
 }
