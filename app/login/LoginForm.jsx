@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Image from 'next/image';
 import arrow from '../../public/arrow.png';
@@ -8,10 +8,16 @@ import '../sass/components/LoginForm.scss';
 
 export default function LoginForm() {
 
-    // const router = useRouter();
+    const router = useRouter();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        router.push('/')
+    }
 
     return (
         <form>
@@ -37,7 +43,7 @@ export default function LoginForm() {
                         />
                     </label>
                 </div>
-                <button type="submit" class="auth-submit">
+                <button type="submit" className="auth-submit" onClick={handleSubmit}>
                     <Image 
                         src={arrow}
                         alt=''

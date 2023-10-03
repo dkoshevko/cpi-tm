@@ -1,0 +1,13 @@
+@import '../utilities/mixins';
+@import '../utilities/placeholders';
+@import '../utilities/variables';
+
+.start-menu {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(to bottom, #245EDC 0%, #3f8cf3 9%, #245EDC 18%, #245EDC 92%, #1941A5 100%) center/cover no-repeat;
+    position: absolute;
+    z-index: 50;
+    left: 0;
+    bottom: 100%;
+}

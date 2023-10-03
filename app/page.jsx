@@ -6,10 +6,13 @@ export default function Desktop() {
   return (
     <main className="desktop">
       <div className="desktop--icons">
-        <Icon imagePath='/folder.png' label='Documents' />
-        <Icon imagePath='/folder.png' label='Documents' />
-        <Icon imagePath='/folder.png' label='Documents' />
-        <Icon imagePath='/folder.png' label='Documents' />
+        <Icon imagePath='/folder.png' label='Mentorship' />
+        <Icon imagePath='/folder.png' label='About' />
+        <Icon imagePath='/folder.png' label='Team' />
+        <Icon imagePath='/folder.png' label='Our Product' />
+        <Icon imagePath='/folder.png' label='Discord' />
+        <Icon imagePath='/folder.png' label='Telegram' />
+        <Icon imagePath='/folder.png' label='TouTube' />
       </div>
       <div className="watermark">
       </div>
