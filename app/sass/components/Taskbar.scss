@@ -4,6 +4,7 @@
 
 .taskbar {
     position: absolute;
+    z-index: 20;
     bottom: 0;
     background-color: $blue-dark;
     background: linear-gradient(to bottom, #245EDC 0%, #3f8cf3 9%, #245EDC 18%, #245EDC 92%, #1941A5 100%) center/cover no-repeat;

@@ -1,5 +1,6 @@
 import Icon from "./components/Icon";
 import Taskbar from "./components/Taskbar";
+import Window from "./components/Window";
 import './sass/Desktop.scss';
 
 export default function Desktop() {
@@ -16,6 +17,7 @@ export default function Desktop() {
       </div>
       <div className="watermark">
       </div>
+      <Window imagePath='/folder.png' label='Mentorship' />
       <Taskbar />
     </main>
   )

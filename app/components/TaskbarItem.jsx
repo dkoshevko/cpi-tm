@@ -4,7 +4,7 @@ import '../sass/components/TaskbarItem.scss';
 
 export default function TaskbarItem() {
     return(
-        <div className="single-item">
+        <div className='single-item'>
             <Image
                 src={'/folder.png'}
                 alt='folder' 

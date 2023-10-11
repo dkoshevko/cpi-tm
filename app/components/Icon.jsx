@@ -28,10 +28,15 @@ export default function Icon({ imagePath, label }) {
         };
     }, [isSelected]);
 
+    const doubleClick = () => {
+        
+    }
+
     return (
         <div
             className={`desktop--icons__single ${isSelected ? 'selected' : ''}`}
             onClick={handleClick}
+            onDoubleClick={doubleClick}
         >
             <Image
                 src={imagePath}

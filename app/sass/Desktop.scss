@@ -3,6 +3,7 @@
 @import './utilities/variables';
 
 .desktop {
+    overflow: hidden;
     position: relative;
     width: 100%;
     height: 100%;
@@ -26,7 +27,7 @@
     background-repeat: no-repeat;
     opacity: 0.5;
     position: absolute;
-    z-index: 10;
+    z-index: 1;
     width: 10vw;
     height: 10vw;
     top: 50%;

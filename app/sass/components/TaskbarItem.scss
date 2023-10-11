@@ -4,7 +4,6 @@
 
 .single-item {
     cursor: pointer;
-    background-color: #4782ec;
     width: 150px;
     padding: 4px 8px;
     border-radius: $radius-small;
@@ -17,6 +16,15 @@
     background-color: #5f8ee5;
 }
 .single-item:active {
+    background-color: #083ea1;
+    box-shadow: 1px 0 0.5px #00000083 inset, -1px 0 0.5px #00000083 inset;
+}
+
+
+.cover {
+    background-color: #4782ec;
+}
+.focus {
     background-color: #083ea1;
     box-shadow: 1px 0 0.5px #00000083 inset, -1px 0 0.5px #00000083 inset;
 }
