@@ -3,12 +3,13 @@
 @import '../utilities/variables';
 
 .single-item {
-    cursor: pointer;
     width: 150px;
+    height: 22px;
     padding: 4px 8px;
     border-radius: $radius-small;
-    box-shadow: -1px 0 0.5px #00000083 inset, 1px 0 0.5px #ffffff43 inset;
-    font-size: 12px;
+    background-color: rgb(60, 129, 243);
+    box-shadow: rgba(0, 0, 0, 0.3) -1px 0px inset, rgba(255, 255, 255, 0.2) 1px 1px 1px inset;
+    font-size: 11px;
     gap: 2px;
     @include flex(row, flex-start, center);
 }

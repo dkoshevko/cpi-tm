@@ -18,21 +18,48 @@
 }
 
 .loading-screen {
+    overflow: hidden;
     background: #000;
+    color: #fff;
     height: 100vh;
     width: 100vw;
     @include flex(column, center, center);
 
     &--wrapper {
+        position: relative;
         width: 450px;
         max-width: 100%;
         flex-grow: 1;
         @include flex(column, center, center);
 
         &__logo {
-            margin-bottom: 70px;
-            width: 100%;
+            position: relative;
+            margin-top: 100px;
             @include flex(row, center, center);
+            
+            img {
+                position: absolute;
+                bottom: -40px;
+            }
+        }
+        
+        &__text {
+            margin-bottom: 50px;
+            font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
+            width: 100%;
+            @include flex(column, center, left);
+
+            &--company {
+                font-size: 1.5em;
+            }
+            &--title {
+                font-size: 5em;
+            }
+            &--professional {
+                font-size: 2em;
+                font-weight: 200;
+                letter-spacing: 0.05em;
+            }
         }
         
         &__loader {
@@ -100,9 +127,9 @@
 
     &--footer {
         width: 100%;
-        color: #fff;
         display: flex;
         justify-content: space-between;
+        text-wrap: wrap;
         padding: 40px;
 
         &__title {
@@ -110,6 +137,32 @@
             font-size: 18px;
             font-weight: bold;
             font-style: italic;
+            margin-left: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .loading-screen {
+        &--wrapper {
+            &__logo {
+                img {
+                    bottom: -20px;
+                }
+            }
+            &__text {
+                width: 90%;
+    
+                &--company {
+                    font-size: 1.2em;
+                }
+                &--title {
+                    font-size: 4em;
+                }
+                &--professional {
+                    font-size: 1.8em;
+                }
+            }
         }
     }
 }

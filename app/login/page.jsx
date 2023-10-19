@@ -28,6 +28,10 @@ export default function Login() {
         };
     }, []);
 
+    const turnOff = () => {
+        alert("Куди зібрався?")
+    }
+
     return (
         <div>
             {showLoader && <Loader />} {/* Afficher le Loader si showLoader est vrai */}
@@ -39,10 +43,10 @@ export default function Login() {
                     <div className="login--main">
                         <div className='login--main__logo'>
                             <Image 
-                                src={'/cpi.png'}
+                                src={'/logo.svg'}
                                 alt='CPI.tm'
-                                width={140}
-                                height={140}
+                                width={170}
+                                height={170}
                             />
                             <h1>To begin, click your user name</h1>
                         </div>
@@ -60,10 +64,10 @@ export default function Login() {
                         <div className="login--bottom__gradient">
                         </div>
                         <div className='login--bottom__off'>
-                            <button> 
+                            <button onClick={turnOff}>
                                 <Image src={off} alt='' />
                             </button>
-                            <p>Turn off computer</p>
+                            <span>Turn off computer</span>
                         </div>
                         <div className='login--bottom__message'>
                             <p>After you log on, you can add or change accounts</p>

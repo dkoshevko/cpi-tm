@@ -1,13 +1,13 @@
 'use client'
 
 // Modules
-import Image from "next/image";
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 // Styles
 import '../sass/components/Icon.scss';
 
-export default function Icon({ imagePath, label }) {
+export default function Icon({ imagePath, label, doubleClick }) {
     const [isSelected, setIsSelected] = useState(false);
 
     const handleClick = () => {
@@ -28,10 +28,6 @@ export default function Icon({ imagePath, label }) {
         };
     }, [isSelected]);
 
-    const doubleClick = () => {
-        
-    }
-
     return (
         <div
             className={`desktop--icons__single ${isSelected ? 'selected' : ''}`}
@@ -46,5 +42,5 @@ export default function Icon({ imagePath, label }) {
             />
             <span>{label}</span>
         </div>
-    );
+    )
 }

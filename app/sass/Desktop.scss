@@ -22,10 +22,10 @@
 }
 
 .watermark {
-    background-image: url('../../public/cpi.png');
-    background-size: 10vw;
+    background-image: url('../../public/logo.svg');
+    background-size: 9vw;
     background-repeat: no-repeat;
-    opacity: 0.5;
+    opacity: 0.85;
     position: absolute;
     z-index: 1;
     width: 10vw;
@@ -33,4 +33,9 @@
     top: 50%;
     left: 50%;
     translate: -50% -50%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }

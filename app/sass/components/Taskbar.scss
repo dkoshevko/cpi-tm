@@ -3,11 +3,12 @@
 @import '../utilities/variables';
 
 .taskbar {
+    user-select: none;
     position: absolute;
     z-index: 20;
     bottom: 0;
     background-color: $blue-dark;
-    background: linear-gradient(to bottom, #245EDC 0%, #3f8cf3 9%, #245EDC 18%, #245EDC 92%, #1941A5 100%) center/cover no-repeat;
+    background: linear-gradient(rgb(31, 47, 134) 0px, rgb(49, 101, 196) 3%, rgb(54, 130, 229) 6%, rgb(68, 144, 230) 10%, rgb(56, 131, 229) 12%, rgb(43, 113, 224) 15%, rgb(38, 99, 218) 18%, rgb(35, 91, 214) 20%, rgb(34, 88, 213) 23%, rgb(33, 87, 214) 38%, rgb(36, 93, 219) 54%, rgb(37, 98, 223) 86%, rgb(36, 95, 220) 89%, rgb(33, 88, 212) 92%, rgb(29, 78, 192) 95%, rgb(25, 65, 165) 98%);
     height: 32px;
     width: 100%;
     color: #FFF;
@@ -15,27 +16,24 @@
     @include flex(row, flex-start, center);
 
     &--start {
-        cursor: pointer;
+
         height: 100%;
         clip-path: circle(65% at 45% 50%);
         background-color: $green-medium;
         background: linear-gradient(to bottom, $green-medium 0%, $green-light 9%, $green-medium 18%, $green-medium 92%, $green-dark 100%) center/cover no-repeat;
-        box-shadow: 0px 5px 10px #79ce71 inset, -8px 0 10px #000 inset;
+        // box-shadow: 0px 5px 10px #79ce71 inset, -8px 0 10px #000 inset;
+        box-shadow: -8px 0 5px #000 inset;
         font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
         font-size: 18px;
         font-weight: bold;
         font-style: italic;
         text-shadow: 1px 1px 3px #222;
-        padding: 0 25px 0 10px;
-        gap: 7px;
+        padding: 0 25px 0 0;
         @include flex(row, center, center);
 
         span {
             padding-bottom: 2px;
         }
-    }
-    &--start:hover {
-        box-shadow: -8px 0 5px #000 inset;
     }
     &--start:active {
         box-shadow: -8px 0 15px #242424 inset;
@@ -48,11 +46,16 @@
     &--time {
         position: absolute;
         right: 0;
-        width: 70px;
         height: 100%;
-        background-color: #5DB3FF;
-        background: linear-gradient(to bottom, #5DB3FF 0%, #a0c4f5 9%, #5DB3FF 18%, #5DB3FF 92%, #1941A5 100%) center/cover no-repeat;
-        font-size: 12px;
+        padding: 0 10px;
+        background: linear-gradient(rgb(12, 89, 185) 1%, rgb(19, 158, 233) 6%, rgb(24, 181, 242) 10%, rgb(19, 155, 235) 14%, rgb(18, 144, 232) 19%, rgb(13, 141, 234) 63%, rgb(13, 159, 241) 81%, rgb(15, 158, 237) 88%, rgb(17, 155, 233) 91%, rgb(19, 146, 226) 94%, rgb(19, 126, 215) 97%, rgb(9, 91, 201) 100%);
+        border-left: 1px solid rgb(16, 66, 175);
+        box-shadow: rgb(24, 187, 255) 1px 0px 1px inset;
+        font-size: 11px;
         @include flex(row, center, center);
     }
+}
+
+.active-menu {
+    box-shadow: -8px 0 15px #242424 inset;
 }

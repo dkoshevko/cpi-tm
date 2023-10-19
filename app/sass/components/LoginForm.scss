@@ -46,3 +46,9 @@ h2 {
     margin-top: 0.97rem;
     @include flex(row, center, flex-end);
 }
+
+@media screen and (max-width: 812px) {
+    h2 {
+        margin-bottom: 0.5rem;
+    }
+}

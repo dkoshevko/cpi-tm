@@ -3,10 +3,12 @@
 @import '../utilities/variables';
 
 .desktop--icons__single {
-    cursor: pointer;
+    user-select: none;
     padding: 10px;
     min-width: 110px;
     max-width: 150px;
+    font-size: 12px;
+    text-shadow: black 0px 1px 1px;
     border: 1px solid transparent;
     @include flex(column, flex-end, center);
 
