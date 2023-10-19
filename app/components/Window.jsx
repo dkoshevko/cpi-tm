@@ -9,12 +9,12 @@ import Draggable from 'react-draggable';
 import '../sass/components/Window.scss';
 
 
-export default function Window({ imagePath, label, customId }) {
+export default function Window({ imagePath, label, customClass, onClose }) {
     // State of full-screen window
     const [isFullScreen, setIsFullScreen] = useState(false);
 
     // State of top window
-    const [isPrimary, setIsPrimary] = useState(false);
+    const [isPrimary, setIsPrimary] = useState(true);
 
     // Make primary
     const handleWindowClick = () => {
@@ -22,7 +22,7 @@ export default function Window({ imagePath, label, customId }) {
     };
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (isPrimary && !event.target.closest(`#${customId}`)) {
+            if (isPrimary && !event.target.closest(`.${customClass}`)) {
                 setIsPrimary(false);
             }
         };
@@ -34,18 +34,10 @@ export default function Window({ imagePath, label, customId }) {
         };
     });
 
-    // Close window
-    const handleCloseClick = () => {
-        const windowElement = document.getElementById(customId);
-        if (windowElement) {
-            windowElement.style.display = 'none';
-        }
-    };
-
     // Make full-screen
     const handleMaximizeClick = () => {
-        const windowElement = document.getElementById(customId);
-        const maximizeButton = document.querySelector(`#${customId} .header__button--maximize`);
+        const windowElement = document.querySelector(`.window .${customClass}`);
+        const maximizeButton = document.querySelector(`.${customClass} .header__button--maximize`);
     
         if (windowElement && maximizeButton) {
             if (isFullScreen) {
@@ -69,10 +61,10 @@ export default function Window({ imagePath, label, customId }) {
             defaultPosition={{ x: 80, y: 0 }}
             handle='header'
             cancel='.window--header__buttons'
+            onDrag={handleWindowClick}
         >
             <div 
-                className={`window ${isPrimary ? 'primary' : 'secondary'}`} 
-                id={customId}
+                className={`window ${customClass} ${isPrimary ? 'primary' : 'secondary'}`} 
                 onClick={handleWindowClick}
             >
                 <div className='window--header-bg'></div>
@@ -93,7 +85,7 @@ export default function Window({ imagePath, label, customId }) {
                         ></button>
                         <button
                             className='header__button header__button--red header__button--close'
-                            onClick={handleCloseClick}
+                            onClick={onClose}
                         ></button>
                     </div>
                 </header>

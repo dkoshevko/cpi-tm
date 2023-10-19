@@ -4,9 +4,9 @@ import Image from 'next/image';
 import '../sass/components/TaskbarItem.scss';
 
 
-export default function TaskbarItem({imagePath, label}) {
+export default function TaskbarItem({imagePath, label, customClass, isPrimary}) {
     return(
-        <div className='single-item'>
+        <div className={`single-item ${customClass} ${isPrimary ? '' : 'unfocused'}`}>
             <Image
                 src={imagePath}
                 alt={label}
