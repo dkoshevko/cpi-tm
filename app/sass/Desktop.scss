@@ -13,9 +13,11 @@
     background-position: center bottom;
 
     &--icons {
+        position: relative;
         color: #FFF;
         font-size: 12px;
-        padding: 2rem 2rem 0 1rem;
+        padding: 2rem 2rem 0 0rem;
+        z-index: 2;
         flex-wrap: wrap;
         @include flex(row, flex-start, center);
     }
@@ -23,7 +25,8 @@
 
 .watermark {
     background-image: url('../../public/logo.svg');
-    background-size: 9vw;
+    background-size: 90%;
+    background-position: center;
     background-repeat: no-repeat;
     opacity: 0.85;
     position: absolute;
@@ -38,4 +41,17 @@
 a {
     text-decoration: none;
     color: inherit;
+}
+
+@media screen and (max-width: 1024px) {
+    .watermark {
+    width: 15vw;
+    height: 15vw;
+    }
+}
+@media screen and (max-width: 768px) {
+    .watermark {
+    width: 40vw;
+    height: 40vw;
+    }
 }

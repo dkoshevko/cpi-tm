@@ -14,6 +14,7 @@ import './sass/Desktop.scss';
 
 export default function Desktop() {
 
+    // State of Taskbar Item
     const [primaryWindowKey, setPrimaryWindowKey] = useState(null);
 
     // Show/Hide windows
@@ -38,36 +39,36 @@ export default function Desktop() {
     // Shortcuts props
     const windowConfigs = {
         mentorship: {
-            imagePath: '/folder.png',
+            imagePath: '/mentor.png',
             label: 'Mentorship',
             isPrimary: windows.mentorship
         },
         about: {
-            imagePath: '/folder.png',
+            imagePath: '/about.png',
             label: 'About',
             isPrimary: windows.about
         },
         team: {
-            imagePath: '/folder.png',
+            imagePath: '/team.png',
             label: 'Our Team',
             isPrimary: windows.team
         },
         products: {
-            imagePath: '/folder.png',
+            imagePath: '/products.png',
             label: 'Our Products',
             isPrimary: windows.products
         }
     };
     const discordProps = {
-        imagePath: '/folder.png',
+        imagePath: '/discord.png',
         label: 'Discord'
     };
     const telegramProps = {
-        imagePath: '/folder.png',
-        label: 'Telegram'
+        imagePath: '/insta.png',
+        label: 'Instagram'
     };
     const youtubeProps = {
-        imagePath: '/folder.png',
+        imagePath: '/youtube.png',
         label: 'YouTube'
     };
 
@@ -81,15 +82,16 @@ export default function Desktop() {
                         imagePath={windowConfigs[windowKey].imagePath}
                         label={windowConfigs[windowKey].label}
                         doubleClick={() => openWindow(windowKey)}
+                        customClass={windowKey}
                     />
                 ))}
-                <Link href=''>
+                <Link href='' target='blank'>
                     <Icon {...discordProps} />
                 </Link>
-                <Link href=''>
+                <Link href='' target='blank'>
                     <Icon {...telegramProps} />
                 </Link>
-                <Link href=''>
+                <Link href='' target='blank'>
                     <Icon {...youtubeProps} />
                 </Link>
             </div>
@@ -120,6 +122,7 @@ export default function Desktop() {
                                 key={windowKey} 
                                 {...taskbarProps} 
                                 isPrimary={isPrimary}
+                                // onClick={clickOnTaskbarItem}
                                 // customClass={windows[windowKey] ? 'unfocused' : ''}
                             />
                         )

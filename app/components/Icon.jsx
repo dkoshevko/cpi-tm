@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 // Styles
 import '../sass/components/Icon.scss';
 
-export default function Icon({ imagePath, label, doubleClick }) {
+export default function Icon({ imagePath, label, doubleClick, customClass }) {
     const [isSelected, setIsSelected] = useState(false);
 
     const handleClick = () => {
@@ -16,7 +16,7 @@ export default function Icon({ imagePath, label, doubleClick }) {
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (isSelected && !event.target.closest('.desktop--icons__single')) {
+            if (isSelected && !event.target.closest(`.${customClass}`)) {
                 setIsSelected(false);
             }
         };

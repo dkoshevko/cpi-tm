@@ -208,3 +208,20 @@
 .secondary .window--header-bg::after {
     opacity: 0.3;
 }
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .window {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 30px;
+        transform: none !important;
+        width: 100%;
+        max-width: 100%;
+        max-height: none;
+        height: calc(100% - 30px);
+    }
+}

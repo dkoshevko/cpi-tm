@@ -10,6 +10,7 @@ import '../sass/components/Window.scss';
 
 
 export default function Window({ imagePath, label, customClass, onClose }) {
+
     // State of full-screen window
     const [isFullScreen, setIsFullScreen] = useState(false);
 
@@ -36,24 +37,23 @@ export default function Window({ imagePath, label, customClass, onClose }) {
 
     // Make full-screen
     const handleMaximizeClick = () => {
-        const windowElement = document.querySelector(`.window .${customClass}`);
+        const windowElement = document.querySelector(`.primary`);
         const maximizeButton = document.querySelector(`.${customClass} .header__button--maximize`);
     
         if (windowElement && maximizeButton) {
             if (isFullScreen) {
-                // If full-screen make default classes
+                // If not full-screen make default classes
                 windowElement.classList.remove('full-screen');
                 maximizeButton.classList.remove('header__button--maximized');
                 setIsFullScreen(false);
             } else {
-                // If not full-screen add classes
+                // If full-screen add classes
                 windowElement.classList.add('full-screen');
                 maximizeButton.classList.add('header__button--maximized');
                 setIsFullScreen(true);
             }
         }
     };
-    
 
 
     return (
@@ -72,8 +72,8 @@ export default function Window({ imagePath, label, customClass, onClose }) {
                     <Image
                         src={imagePath}
                         alt={label}
-                        width={15}
-                        height={15}
+                        width={20}
+                        height={20}
                         className='window--header__img'
                     />
                     <span className='window--header__label'>{label}</span>
